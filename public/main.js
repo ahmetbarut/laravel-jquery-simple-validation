@@ -1,6 +1,5 @@
-function validateForm(selector, uri, method = "POST") {
-    $(selector + " .form-control").removeClass("border");
-    $(selector + " .form-control").parent().removeClass("border");
+function validateForm(selector, uri, method = "POST", errorClass = ["border-danger border"]) {
+    $(selector + " .form-control").removeClass(errorClass);
     $.ajax({
         method: method,
         url: uri,
@@ -12,11 +11,7 @@ function validateForm(selector, uri, method = "POST") {
         },
         error: function(xhr, status) {
             xhr.responseJSON.errors.map(function(error) {
-                if ('contract1' == error.rule || 'contract2' == error.rule) {
-                    $(selector + " .form-control[name=" + error.rule + "]").parent().addClass(['border-danger', 'border']);
-                } else {
-                    $(selector + " .form-control[name=" + error.rule + "]").addClass(['border-danger', 'border']);
-                }
+                $(selector + " .form-control[name=" + error.rule + "]").addClass(errorClass);
             });
         }
     });

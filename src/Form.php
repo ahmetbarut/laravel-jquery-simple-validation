@@ -26,16 +26,16 @@ class Form
      * Farklı hata mesajları döndürülmesi istenirse kullanılabilir.
      * @var array
      */
-    protected $messages;
+    protected $messages = [];
 
     /**
-     * Doğrulamanın yapılmasını sağlar.
+     * Doğrulamanın yapılmasını sağlar.olmalıdır
      * @param Request $request
      * @return static
      */
     public function make(Request $request): static
     {
-        $validator = Validator::make($request->all(), $this->getRules(), $this->getMessages() ?? []);
+        $validator = Validator::make($request->all(), $this->getRules(), $this->getMessages());
         if (true === $validator->fails()) {
             $this->errors = [];
             foreach ($validator->errors()->messages() as $rule => $message) {

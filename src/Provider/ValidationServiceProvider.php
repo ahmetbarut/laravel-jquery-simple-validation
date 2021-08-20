@@ -14,7 +14,7 @@ class ValidationServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('form', function () {
-            return new \ahmetbarut\Validation\Facades\Form;
+            return new \ahmetbarut\Validation\Form;
         });
     }
 
