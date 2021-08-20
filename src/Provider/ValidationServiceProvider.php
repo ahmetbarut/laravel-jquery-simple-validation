@@ -26,7 +26,7 @@ class ValidationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . "../main.js" => public_path('laravel-jq-validation.js')
+            __DIR__ . "/../main.js" => public_path('laravel-jq-validation.js')
         ]);
     }
 }
