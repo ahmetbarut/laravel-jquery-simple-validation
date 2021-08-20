@@ -15,7 +15,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ahmetbarut\\Validation\\Provider\\ValidationServiceProider"
+                "ahmetbarut\\Validation\\Provider\\ValidationServiceProvider"
             ],
             "aliases": {
                 "Form": "ahmetbarut\\Validation\\Facades\\Form"
