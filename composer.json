@@ -1,0 +1,25 @@
+{
+    "name": "ahmetbarut/laravel-jq-validation",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ahmetbarut\\Validation\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "Ahmet",
+        "email": "ahmetbarut588@gmial.com"
+    }],
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ahmetbarut\\Validation\\ValidationServiceProider"
+            ],
+            "aliases": {
+                "Form": "ahmetbarut\\Validation\\Facades\\Form"
+            }
+        }
+    }
+}
