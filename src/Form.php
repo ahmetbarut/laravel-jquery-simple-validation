@@ -4,10 +4,7 @@ namespace ahmetbarut\Validation;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-/**
- * Formları daha kolay ve hızlı bir kullanım sağlar.
- * Dokümanına app/Helper/Validation/form.md dosyasında bulunmakta
- */
+
 class Form
 {
     /**
