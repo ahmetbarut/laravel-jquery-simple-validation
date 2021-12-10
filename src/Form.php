@@ -30,7 +30,7 @@ class Form
      * @param Request $request
      * @return static
      */
-    public function make(Request $request): static
+    public function make(Request $request)
     {
         $validator = Validator::make($request->all(), $this->getRules(), $this->getMessages());
         if (true === $validator->fails()) {
@@ -72,7 +72,7 @@ class Form
      * Doğrulama başarısız ise hata üretir.
      * @return false|array
      */
-    public function getErrors(): false | array
+    public function getErrors()
     {
         return $this->errors;
     }
@@ -82,7 +82,7 @@ class Form
      * @param array|false $errors
      * @return static
      */
-    private function setErrors($errors): static
+    private function setErrors($errors): self
     {
         $this->errors = $errors;
         return $this;
@@ -90,9 +90,9 @@ class Form
 
     /**
      * Değiştirilecek mesajları sınıf içinde erişilmesini sağlar.
-     * @return array
+     * @return array|null
      */
-    private function getMessages(): array|null
+    private function getMessages()
     {
         return $this->messages;
     }
@@ -102,7 +102,7 @@ class Form
      * @param array $messages
      * @return static
      */
-    public function setMessages($messages): static
+    public function setMessages($messages): self
     {
         $this->messages = $messages;
         return $this;
