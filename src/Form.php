@@ -62,7 +62,7 @@ class Form
      * @param array $rules
      * @return static
      */
-    public function setRules($rules): static
+    public function setRules($rules): self
     {
         $this->rules = $rules;
         return $this;
